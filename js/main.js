@@ -21,7 +21,7 @@ function createMap(){
 	getData(map);
 };
 	
-//calculate radius of proportional symbols
+/* //calculate radius of proportional symbols
 function calcPropRadius(attnValue){
 	//scale factor - adjust size evenly (What exactly does this mean?)
 	var scaleFactor = 50;
@@ -43,10 +43,10 @@ function createPropSymbols(data, map, attribute){
 	}).addTo(map);
 	
 	//
-	/* function createPropSymbols(data){
+	function createPropSymbols(data){
 
     //Determine which attribute to visualize with proportional symbols
-    var attribute = "Yr_2005-2009"; */
+    var attribute = "Yr_2005-2009";
 
 	//create a Leaflet GeoJSON layer and add it to the map
 	L.geoJson(data, {
@@ -63,7 +63,7 @@ function createPropSymbols(data, map, attribute){
         }
     }).addTo(map);
 };
-
+*/
 //add geojson file to the map
 function getData(map){
 	$.ajax("data/co2Country.geojson", {
@@ -75,5 +75,7 @@ function getData(map){
 	});
 };
 
-$(document).ready(createMap);
+// $(document).ready(createMap); 
+
+createMap();
  
