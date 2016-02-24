@@ -34,17 +34,13 @@ function calcPropRadius(attnValue){
 };
 	
 //function to create proportional symbols
-function createPropSymbols(data, map){
+function createPropSymbols(data, map, attribute){
     //create marker options
-    var geojsonMarkerOptions = {
-        radius: 8,
-        fillColor: "#ff7800",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-	var attribute = "Yr_2005-2009";
-    };
+    L.geoJson(data, {
+		pointToLayer: function(feature, latlng){
+			return pointToLayer(feature, latlng, attributes);
+		}
+	}).addTo(map);
 	
 	//
 	/* function createPropSymbols(data){
